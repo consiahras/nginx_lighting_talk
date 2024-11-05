@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: lightingtalkproject
+  namespace: argocd          # ArgoCD should be installed in this namespace
+spec:
+  description: Project limited to the lightingtalk namespace
+  destinations:
+  - namespace: lightingtalk   # Allowed namespace
+    server: https://kubernetes.default.svc
+  sourceRepos:
+  - '*'                       # Allows any Git repository, can be restricted to specific repos
+  clusterResourceWhitelist:
+  - group: ""                 # Allows usage of standard Kubernetes API resources in the cluster
+    kind: "*"
