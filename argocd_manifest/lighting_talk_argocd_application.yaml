@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: 'https://github.com/consiahras/nginx_lighting_talk.git'  # Your GitHub repository
     targetRevision: main                      # Branch to track
-    path: my_nginx_manifest /nginx-deployment.yaml     # Path in the repository where the manifest files are located
+    path: my_nginx_manifest/nginx-deployment.yaml     # Path in the repository where the manifest files are located
   destination:
     server: https://kubernetes.default.svc    # In-cluster server address
     namespace: lightingtalk                   # Namespace to deploy into
