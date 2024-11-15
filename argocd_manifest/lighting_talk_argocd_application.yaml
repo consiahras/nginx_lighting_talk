@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-deployment
+  namespace: argocd
+spec:
+  project: lightingtalkproject                # Refers to the project you created
+  source:
+    repoURL: 'https://github.com/consiahras/nginx_lighting_talk.git'  # Your GitHub repository
+    targetRevision: main                      # Branch to track
+    path: my_nginx_manifest                   # Path in the repository where the manifest files are located
+  destination:
+    server: https://kubernetes.default.svc    # In-cluster server address
+    namespace: lightingtalk                   # Namespace to deploy into
+  syncPolicy:
+    automated:                                # Automatically sync the application (optional)
+      prune: true                             # Automatically delete resources not defined in Git
+      selfHeal: true                          # Automatically heal resources if they deviate from Git
