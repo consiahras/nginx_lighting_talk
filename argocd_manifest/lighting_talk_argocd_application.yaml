@@ -4,7 +4,7 @@ metadata:
   name: nginx-deployment
   namespace: argocd
 spec:
-  project: lightingtalkproject                # Refers to the project you created
+  project: lightingtalk-project                # Refers to the project you created
   source:
     repoURL: 'https://github.com/consiahras/nginx_lighting_talk.git'  # Your GitHub repository
     targetRevision: main                      # Branch to track
