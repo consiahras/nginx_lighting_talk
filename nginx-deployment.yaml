@@ -5,7 +5,7 @@ metadata:
   labels:
     app: nginx
 spec:
-  replicas: 1  # Modify replicas at demo
+  replicas: 2  # Modify replicas at demo
   selector:
     matchLabels:
       app: nginx
