@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: lightingtalkproject
+  name: lightingtalk-project
   namespace: argocd          # ArgoCD should be installed in this namespace
 spec:
   description: Project limited to the lightingtalk namespace
